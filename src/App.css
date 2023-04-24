@@ -7,3 +7,21 @@ img {
 p {
     text-align: center;
 }
+.logo {
+    color: #fff !important;
+}
+
+.tag {
+    text-decoration: none !important;
+    color: #fff;
+}
+
+.tag:hover {
+    color: yellow !important;
+    text-decoration: underline !important;
+}
+
+.tag-item {
+    text-decoration: none !important;
+    color: #000;
+}

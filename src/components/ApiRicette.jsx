@@ -2,6 +2,8 @@ import * as React from 'react';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import  Box from './ApiHome';
+import Title from './ApiHome';
 
 function ApiRicette() {
   const [apiData, setApiData] = useState(null);
@@ -35,15 +37,19 @@ function ApiRicette() {
         
       {apiData ? (
         <div>
+          <Title>
             <h1>Desserts</h1>
+            </Title>
             <Splide options= {{
             perPage: 3
         }}>
           {apiData.map((recipes) =>{
             return(
             <SplideSlide key={recipes.id}>
+              <Box>
               <p>{recipes.title}</p>
               <img src={recipes.image} alt={recipes.image} />
+              </Box>
             </SplideSlide>
             )
           })}
@@ -55,5 +61,6 @@ function ApiRicette() {
     </div>
   );
 }
+
 
 export default ApiRicette;
