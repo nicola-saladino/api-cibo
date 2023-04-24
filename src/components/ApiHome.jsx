@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import Container from 'react-bootstrap/Container';
 
 import '../App.css'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 // Default theme
 import '@splidejs/react-splide/css';
+import styled from 'styled-components';
 
 
 function ApiHome() {
@@ -31,19 +33,24 @@ function ApiHome() {
   }, []);
 
   return (
+    <Container>
     <div>
         
       {apiData ? (
         <div>
+          <Title>
             <h1>Ricette Popolari</h1>
+            </Title>
             <Splide options= {{
             perPage: 3
         }}>
           {apiData.map((recipes) =>{
             return(
             <SplideSlide key={recipes.id}>
+              <Box>
               <p>{recipes.title}</p>
               <img src={recipes.image} alt={recipes.image} />
+              </Box>
             </SplideSlide>
             )
           })}
@@ -53,7 +60,33 @@ function ApiHome() {
         <p>Loading...</p>
       )}
     </div>
+    </Container>
   );
 }
+
+//style components
+export const Box = styled.div `
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  
+  p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+`
+export const Title = styled.h1 `
+text-align: center;
+
+`
+
 
 export default ApiHome;
