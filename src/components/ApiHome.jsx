@@ -6,6 +6,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 // Default theme
 import '@splidejs/react-splide/css';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 
 function ApiHome() {
@@ -49,7 +50,9 @@ function ApiHome() {
             <SplideSlide key={recipes.id}>
               <Box>
               <p>{recipes.title}</p>
+               <Link to={`/recipe/${recipes.id}`}>
               <img src={recipes.image} alt={recipes.image} />
+              </Link>
               </Box>
             </SplideSlide>
             )

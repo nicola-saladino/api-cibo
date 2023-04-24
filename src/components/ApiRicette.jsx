@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import  Box from './ApiHome';
@@ -48,6 +48,7 @@ function ApiRicette() {
             <SplideSlide key={recipes.id}>
               <Box>
               <p>{recipes.title}</p>
+
               <img src={recipes.image} alt={recipes.image} />
               </Box>
             </SplideSlide>
