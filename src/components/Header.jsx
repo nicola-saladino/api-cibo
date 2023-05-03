@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import logo from '../logo.png';
@@ -40,6 +41,9 @@ return (
 </NavDropdown.Item>
 
         </NavDropdown>
+        <Link to="/login">
+        <Button variant="outline-warning">Login</Button>{' '}
+        </Link>
       </Nav>
     </Navbar.Collapse>
   </Container>

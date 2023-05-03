@@ -14,7 +14,7 @@ function ApiHome() {
 
   const fetchApiData = async () => {
     try {
-      const response = await fetch('https://api.spoonacular.com/recipes/random?number=10&apiKey=d5cede24663f403c9fffd0ae0f88fbf5');
+      const response = await fetch('https://localhost:4000');
       const json = await response.json();
       sessionStorage.setItem('api_response', JSON.stringify(json.recipes));
       
